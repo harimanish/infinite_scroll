@@ -79,25 +79,25 @@ const InfiniteScrollList: React.FC = () => {
         <div className="flex justify-center">
             <Card className="w-96">
                 <List>
-                    {users.map((user, index) => (
+                    {users.map(({ name, location, picture }, index) => (
                         <ListItem key={index}>
                             <ListItemPrefix>
                                 <Avatar
                                     variant="circular"
                                     alt="User Thumbnail"
-                                    src={user.picture.thumbnail}
+                                    src={picture.thumbnail}
                                 />
                             </ListItemPrefix>
                             <div>
                                 <Typography variant="h6" color="blue-gray">
-                                    {`${user.name.first} ${user.name.last}`}
+                                    {`${name.first} ${name.last}`}
                                 </Typography>
                                 <Typography
                                     variant="small"
                                     color="gray"
                                     className="font-normal"
                                 >
-                                    {user.location.city}
+                                    {location.city}
                                 </Typography>
                             </div>
                         </ListItem>

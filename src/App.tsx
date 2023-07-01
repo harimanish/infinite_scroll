@@ -8,6 +8,7 @@ const App = () => {
     return (
         <AuthProvider>
             <Routes>
+                <Route path="/" element={<Login />} />
                 <Route path="/login" element={<Login />} />
                 <Route element={<PrivateRoutes />}>
                     <Route path="/home" element={<Home />} />

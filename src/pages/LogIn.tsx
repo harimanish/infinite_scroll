@@ -13,7 +13,7 @@ import Layout from "../Layout";
 import { AuthContext } from "../contexts/Auth.context";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-export default function Login() {
+export default function LogIn() {
     const history = useNavigate();
     const { isLogged, setIsLogged } = useContext(AuthContext);
     const [email, setEmail] = useState("");

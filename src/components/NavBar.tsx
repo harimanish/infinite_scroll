@@ -8,7 +8,7 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { AuthContext } from "../contexts/Auth.context";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function NavList() {
     const history = useNavigate();
@@ -17,6 +17,14 @@ function NavList() {
         setIsLogged(false);
         history("/login");
     };
+
+    const location = useLocation();
+
+    // Show the logout button only in the "/home" route
+    if (location.pathname !== "/home") {
+        return null;
+    }
+
     return (
         <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
             <Typography
